@@ -22,6 +22,7 @@ const parseArgv = (argv) => {
     }, '');
     
     const matches = argv.match(new RegExp(regex, 'g'));
+    if (!matches) return [];
     return matches.map(alias => aliasesMap[alias])
 }
 
@@ -45,6 +46,7 @@ if (!argv) return;
 
 (async () => {
     const apps = parseArgv(argv);
+    if (apps.length === 0) return;
     const monitorSize = await getMonitorSize();
     const [_, __, width, height] = monitorSize;
     const windows = windowManager.getWindows();
