@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+applescript@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/applescript/-/applescript-1.0.0.tgz#bb87af568cad034a4e48c4bdaf6067a3a2701317"
+  integrity sha1-u4evVoytA0pOSMS9r2Bno6JwExc=
+
 extract-file-icon@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/extract-file-icon/-/extract-file-icon-0.3.2.tgz#9d95bf1aef4125c6a5844b1898492847868e569e"
