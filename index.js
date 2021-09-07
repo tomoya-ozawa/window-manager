@@ -42,16 +42,24 @@ windowManager.requestAccessibility();
 
 const argv = process.argv[2];
 if (!argv) return;
-const apps = parseArgv(argv);
 
 
 (async () => {
+    const apps = parseArgv(argv);
     const monitorSize = await getMonitorSize();
     const [_, __, width, height] = monitorSize;
     const windows = windowManager.getWindows();
 
-    windows.forEach((window)=> {
-        console.log(window.getTitle());
-        window.setBounds({ x: 0, y: 0, width, height });
-    });
+    const appWidth = width / apps.length;
+    apps.forEach((app, i) => {
+        const appTitle = constants.apps[app].windowTitle;
+        windows.forEach((window)=> {
+            const title = window.getTitle();
+            if (appTitle === title) {
+                window.bringToTop();
+                window.setBounds({ x: appWidth * i, y: 0, width: appWidth, height });
+            }
+        });
+    })
+
 })();
