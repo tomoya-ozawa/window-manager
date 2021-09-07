@@ -2,8 +2,7 @@ const { windowManager } = require("node-window-manager");
 const applescript = require("applescript");
 const fs = require("fs");
 const constants = require("./constants");
-const script = fs.readFileSync("./monitorSize.scpt", {encoding: "utf-8"});
-
+const script = fs.readFileSync(__dirname + "/monitorSize.scpt", {encoding: "utf-8"});
 
 // ---------------------functions---------------------
 
