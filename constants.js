@@ -1,21 +1,18 @@
 const CONSTANTS = {
-    apps: [
-        {   
-            name: "chrome",
+    apps: {
+        chrome: {   
             alias: "ch",
             windowTitle: "Google Chrome"
         },
-        {   
-            name: "vscode",
+        vscode: {
             alias: "vi",
             windowTitle: "Code"
         },
-        {   
-            name: "iterm",
+        iterm: {
             alias: "ter",
             windowTitle: "iTerm"
         },
-    ]
+    }
 };
 
 module.exports = CONSTANTS;
